@@ -1,141 +1,422 @@
+<!DOCTYPE html>
+<html 
+	lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+<link rel="stylesheet" href="/css/layout.css">
 
+		
+		<title> Archive -  Hexo</title>
+		<!-- <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" /> -->
+		<!-- <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script> -->
+		
+<link rel="stylesheet" href="/lib/mdui/mdui.min.css">
 
-  <!DOCTYPE html>
-  <html lang="en">
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="renderer" content="webkit">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <meta name="description" content=网安小菜鸡的个人学习博客...... >
-  <meta name="keywords" content=hexo,theme,MiHoYo >
+		
+<script src="/lib/mdui/mdui.min.js"></script>
 
-  <head>
-    <title>
-      Archives [ Hexo ]
-    </title>
-  <meta name="generator" content="Hexo 7.1.1"></head>
+		<!-- lazyload -->
+		
+<script src="/lib/lazysizes.js"></script>
 
-  <body>
+		<!-- smooth-scrolling -->
+		
+<script src="/lib/smooth-scrolling.js"></script>
 
-    <link rel="stylesheet" href="/css/header.css">
-<div class="header">
-  <div class="logo">
-    <span class="pull-left">
-      <a id="site-name" href="/">
-        syl&#39;s blog
-      </a>
-    </span>
-  </div>
-  <ul class="nav-list">
-    
-      <li>
-        <a href="/">
-          首页
-        </a>
-      </li>
-      
-      <li>
-        <a href="/about">
-          关于
-        </a>
-      </li>
-      
-  </ul>
+		<!-- highlight -->
+		
+<link rel="stylesheet" href="/lib/highlight/atom-one-dark.min.css">
+
+		
+<script src="/lib/highlight/highlight.min.js"></script>
+
+		<!-- 预置 kiraicon -->
+		
+<link rel="stylesheet" href="/lib/iconfont/iconfont.css">
+
+		
+		<link
+			rel="shortcut icon"
+			href="https://c-ssl.duitang.com/uploads/blog/202307/21/B8SV6nAYtl0l1Lq.png"
+			type="image/png"
+		/>
+		
+<link rel="stylesheet" href="/deps/css/APlayer.min.css">
+
+		
+		
+<script src="/deps/js/APlayer.min.js"></script>
+<script src="/deps/js/Meting.min.js"></script>
+
+	<meta name="generator" content="Hexo 7.1.1"></head>
+
+	<body>
+		<div
+			class="kira-background"
+			style="background-image: url('https://i0.hdslb.com/bfs/article/f149840d85eabcaee56e1bd91dfb9026b7b24550.jpg@1256w_1256h_!web-article-pic.avif')"
+		></div>
+		<div class="kira-header">
+    <a
+        class="kira-drawer-button mdui-ripple"
+        title="导航栏"
+        onclick="document.querySelector('.kira-sidebar-modal').classList.add('show');document.querySelector('.kira-sidebar#sidebar').classList.add('show');"
+    >
+        <i class="kirafont icon-menu"></i>
+    </a>
+    <a href="/" title="Hexo">
+        <img
+			src="https://i0.hdslb.com/bfs/article/bba0492b82e2b25e94ed955693d3ac4791611f31.png@1256w_708h_!web-article-pic.avif"
+			alt="John Doe"
+		/>
+    </a>
+</div>
+		<div class="kira-body">
+			<div class="kira-sidebar" id="sidebar">
+	<div class="kira-avatar mdui-ripple">
+		<a target="_blank" rel="noopener" href="https://i0.hdslb.com/bfs/article/bba0492b82e2b25e94ed955693d3ac4791611f31.png@1256w_708h_!web-article-pic.avif" title="John Doe">
+			<img
+				src="https://i0.hdslb.com/bfs/article/bba0492b82e2b25e94ed955693d3ac4791611f31.png@1256w_708h_!web-article-pic.avif"
+				alt="John Doe"
+			/>
+		</a>
+	</div>
+	<div class="kira-count">
+		<div><span>文章</span>5</div>
+		<div><span>标签</span>0</div>
+		<div><span>分类</span>0</div>
+	</div>
+	<div class="kira-list">
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/"
+			title="回到首页"
+		>
+			<i
+				class="kirafont
+					
+						icon-home
+					"
+			></i>
+			<div class="kira-list-item-content">
+				回到首页
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/archive.html"
+			title="文章归档"
+		>
+			<i
+				class="kirafont
+					
+						icon-container
+					"
+			></i>
+			<div class="kira-list-item-content">
+				文章归档
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/about.html"
+			title="关于本人"
+		>
+			<i
+				class="kirafont
+					
+						icon-user
+					"
+			></i>
+			<div class="kira-list-item-content">
+				关于本人
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/friends.html"
+			title="我的朋友"
+		>
+			<i
+				class="kirafont
+					
+						icon-team
+					"
+			></i>
+			<div class="kira-list-item-content">
+				我的朋友
+			</div>
+		</a>
+		
+	</div>
+	<aside id="kira-sidebar">
+		
+			<div class="kira-widget-wrap">
+	<div class="kira-widget kira-social">
+		
+			<a
+				class="mdui-ripple"
+				href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=3244634309&website=www.oicqzone.com"
+				target="_blank"
+				mdui-tooltip="{content: 'QQ'}"
+				style="color: rgb(49, 174, 255); background-color: rgba(49, 174, 255, .1);"
+			>
+				<i
+					class="kirafont
+					
+						icon-QQ
+					"
+				></i>
+			</a>
+		
+	</div>
 </div>
 
-      <!--<link rel="stylesheet" href="/css/top-header.css">
-<div id="top-bar" class="fixed">
+		
+			
+		
+			
 
-  <a class="goto-top" href="#"></a>
-  <ul class="bar-list bar-list-1">
-    
-      <li>
-        <p>
-          <a href="/">
-            <text class="bar-text bar-p1">
-              首页
-            </text>
-            <text class="bar-text bar-p2"></text>
-          </a>
-          <text class="bar-p3">/</text>
-        </p>
-      </li>
-      
-      <li>
-        <p>
-          <a href="/about">
-            <text class="bar-text bar-p1">
-              关于
-            </text>
-            <text class="bar-text bar-p2"></text>
-          </a>
-          <text class="bar-p3">/</text>
-        </p>
-      </li>
-      
-  </ul>
-</div>-->
-
-        <div id="content-outer">
-          <div class="content-inner">
-            
+		
+			
+	<div class="kira-widget-wrap">
+		<h3 class="kira-widget-title">
+			Archive
+		</h3>
+		<div class="kira-widget">
+			<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/">2024</a><span class="archive-list-count">5</span></li></ul>
+		</div>
+	</div>
 
 
-
-  <div id="archive">
-
-    <h1>Archives</h1>
-
-    
-
-    <aside>
-      <h2>Categories</h2>
-      
-        <p>None.</p>
-      
-    </aside>
-    <br>
-
-    <aside>
-      <h2>Tags</h2>
-      
-        <p>None.</p>
-      
-    </aside>
-    <br>
-
-    <aside>
-      <h2>Archives</h2>
-      
-        <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li></ul>
-      
-    </aside>
-
-  </div>
-
-
-          </div>
-        </div>
-
-        <link rel="stylesheet" href="/css/footer.css">
-<div class="bottom-outer">
-  <div class="copyright">©2021 - 2021 By Tanger</div>
-  <div class="framework-info">
-    <span>Power by</span>
-    <a class="a1" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
-    <span class="footer-separator">|</span>
-    <span>Theme by</span>
-    <a class="a2" target="_blank" rel="noopener" href="https://github.com/redhat123456/hexo-theme-MiHoYo">MiHoYo</a>
-  </div>
+		
+	</aside>
+	<div class="kira-copyright">
+		&copy; 2024
+		<a href="/">John Doe</a>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &
+		<a href="https://github.com/ch1ny/kira-hexo/" target="_blank">Kira-Hexo</a>
+		<br />
+		
+		
+	</div>
 </div>
-
-          
-            <!-- scripts list from theme config.yml -->
-            
-              <script src="/js/MiHoYo.js"></script>
-              
+<div
+	class="kira-sidebar-modal"
+	id="sidebar-modal"
+	onclick="(function(self) {
+		self.classList.remove('show');
+		document.querySelector('.kira-sidebar.show#sidebar').classList.remove('show');
+	})(this)"
+></div>
+			<div class="kira-content">
+				<div id="kira-top-header"></div>
+				<div class="kira-main-content">
+					<div class="kira-posts">
+    
+        <div class="kira-post">
+            <a href="/2024/04/09/%E5%8C%BA%E5%9D%97%E9%93%BE%E5%AD%A6%E4%B9%A0/">
                 
+                <div
+                    class="kira-post-cover mdui-ripple"
+                    style="padding-bottom: '56.25%'"
+                >
+                    <img
+                        data-src="https://i0.hdslb.com/bfs/article/f149840d85eabcaee56e1bd91dfb9026b7b24550.jpg@1256w_1256h_!web-article-pic.avif"
+                        data-sizes="auto"
+                        alt=""
+                        class="lazyload"
+                    />
+                    <h1></h1>
+                </div>
+                
+            </a>
 
-  </body>
+            <div class="kira-post-meta kira-rainbow">
+                <a>
+                    <i class="kirafont icon-calendar-fill"></i>
+                    2024年04月09日
+                </a>
+                <a>
+                    <i class="kirafont icon-edit-fill"></i>
+                    552 字
+                </a>
+                <a>
+                    <i class="kirafont icon-time-circle-fill"></i>大概
+                    2 分钟
+                </a>
+            </div>
+    
+            
+        </div>
+        <div class="kira-hr"></div>
+    
+        <div class="kira-post">
+            <a href="/2024/04/07/houmen-payload/">
+                
+                <div
+                    class="kira-post-cover mdui-ripple"
+                    style="padding-bottom: '56.25%'"
+                >
+                    <img
+                        data-src="https://i0.hdslb.com/bfs/article/f149840d85eabcaee56e1bd91dfb9026b7b24550.jpg@1256w_1256h_!web-article-pic.avif"
+                        data-sizes="auto"
+                        alt="houmen payload"
+                        class="lazyload"
+                    />
+                    <h1>houmen payload</h1>
+                </div>
+                
+            </a>
 
-  </html>
+            <div class="kira-post-meta kira-rainbow">
+                <a>
+                    <i class="kirafont icon-calendar-fill"></i>
+                    2024年04月07日
+                </a>
+                <a>
+                    <i class="kirafont icon-edit-fill"></i>
+                    23 字
+                </a>
+                <a>
+                    <i class="kirafont icon-time-circle-fill"></i>大概
+                    1 分钟
+                </a>
+            </div>
+    
+            
+        </div>
+        <div class="kira-hr"></div>
+    
+        <div class="kira-post">
+            <a href="/2024/04/04/Misc/">
+                
+                <div
+                    class="kira-post-cover mdui-ripple"
+                    style="padding-bottom: '56.25%'"
+                >
+                    <img
+                        data-src="https://i0.hdslb.com/bfs/article/f149840d85eabcaee56e1bd91dfb9026b7b24550.jpg@1256w_1256h_!web-article-pic.avif"
+                        data-sizes="auto"
+                        alt="Misc"
+                        class="lazyload"
+                    />
+                    <h1>Misc</h1>
+                </div>
+                
+            </a>
+
+            <div class="kira-post-meta kira-rainbow">
+                <a>
+                    <i class="kirafont icon-calendar-fill"></i>
+                    2024年04月04日
+                </a>
+                <a>
+                    <i class="kirafont icon-edit-fill"></i>
+                    3 字
+                </a>
+                <a>
+                    <i class="kirafont icon-time-circle-fill"></i>大概
+                    1 分钟
+                </a>
+            </div>
+    
+            
+        </div>
+        <div class="kira-hr"></div>
+    
+        <div class="kira-post">
+            <a href="/2024/04/04/Web/">
+                
+                <div
+                    class="kira-post-cover mdui-ripple"
+                    style="padding-bottom: '56.25%'"
+                >
+                    <img
+                        data-src="https://i0.hdslb.com/bfs/article/f149840d85eabcaee56e1bd91dfb9026b7b24550.jpg@1256w_1256h_!web-article-pic.avif"
+                        data-sizes="auto"
+                        alt="Web"
+                        class="lazyload"
+                    />
+                    <h1>Web</h1>
+                </div>
+                
+            </a>
+
+            <div class="kira-post-meta kira-rainbow">
+                <a>
+                    <i class="kirafont icon-calendar-fill"></i>
+                    2024年04月04日
+                </a>
+                <a>
+                    <i class="kirafont icon-edit-fill"></i>
+                    3.2k 字
+                </a>
+                <a>
+                    <i class="kirafont icon-time-circle-fill"></i>大概
+                    14 分钟
+                </a>
+            </div>
+    
+            
+        </div>
+        <div class="kira-hr"></div>
+    
+        <div class="kira-post">
+            <a href="/2024/04/03/hello-world/">
+                
+                <div
+                    class="kira-post-cover mdui-ripple"
+                    style="padding-bottom: '56.25%'"
+                >
+                    <img
+                        data-src="https://i0.hdslb.com/bfs/article/f149840d85eabcaee56e1bd91dfb9026b7b24550.jpg@1256w_1256h_!web-article-pic.avif"
+                        data-sizes="auto"
+                        alt="Hello World"
+                        class="lazyload"
+                    />
+                    <h1>Hello World</h1>
+                </div>
+                
+            </a>
+
+            <div class="kira-post-meta kira-rainbow">
+                <a>
+                    <i class="kirafont icon-calendar-fill"></i>
+                    2024年04月03日
+                </a>
+                <a>
+                    <i class="kirafont icon-edit-fill"></i>
+                    75 字
+                </a>
+                <a>
+                    <i class="kirafont icon-time-circle-fill"></i>大概
+                    1 分钟
+                </a>
+            </div>
+    
+            
+        </div>
+        <div class="kira-hr"></div>
+    
+</div>
+
+				</div>
+			</div>
+			<div class="kira-right-column">
+	<a onclick="document.querySelector('#kira-top-header').scrollIntoView({behavior: 'smooth'});" class="kira-backtotop" aria-label="回到顶部" title="回到顶部">
+		<button class="mdui-fab mdui-ripple">
+			<i class="kirafont icon-caret-up"></i>
+		</button>
+	</a>
+</div>
+
+		</div>
+	</body>
+</html>

